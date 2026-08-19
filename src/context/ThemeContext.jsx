@@ -5,9 +5,8 @@ const ThemeContext = createContext(null);
 const THEME_KEY = 'pulsecare-theme';
 
 const getInitialTheme = () => {
-  const stored = localStorage.getItem(THEME_KEY);
-  if (stored === 'light' || stored === 'dark') return stored;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  // Always start in Light Mode for a new session as requested
+  return 'light';
 };
 
 export function ThemeProvider({ children }) {

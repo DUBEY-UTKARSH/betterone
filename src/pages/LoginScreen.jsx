@@ -61,14 +61,14 @@ const LoginScreen = () => {
     e.preventDefault();
     if (validate()) {
       login(formData);
-      navigate('/');
+      navigate('/home');
     }
   };
 
   const handleUseDemo = () => {
     setFormData(DEMO_USER);
     loadDemoProfile();
-    navigate('/');
+    navigate('/home');
   };
 
   return (

@@ -15,7 +15,7 @@ const Navbar = () => {
   const isEmergencyPage = location.pathname === '/emergency';
 
   const navItems = [
-    { label: 'Home', path: '/' },
+    { label: 'Home', path: '/home' },
     { label: 'Services', path: '/services' },
     { label: 'Ask AI', path: '/chatbot' },
     { label: 'Early Detection', path: '/early-detection' },
@@ -27,7 +27,7 @@ const Navbar = () => {
     <header className={`navbar-header ${isEmergencyPage ? 'navbar-emergency' : ''}`}>
       <div className="navbar-inner">
         {/* Logo */}
-        <div className="navbar-logo" onClick={() => navigate('/')}>
+        <div className="navbar-logo" onClick={() => navigate('/home')}>
           <div className="logo-icon-wrap">
             <Activity className="logo-icon" size={22} />
           </div>
