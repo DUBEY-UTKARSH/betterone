@@ -1,0 +1,37 @@
+.scroll-stack-scroller {
+  width: 100%;
+  position: relative;
+}
+
+.scroll-stack-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  padding: 20px 0;
+}
+
+.scroll-stack-card-wrapper {
+  position: sticky;
+  width: 100%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.scroll-stack-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.scroll-stack-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 15px 35px rgba(15, 110, 86, 0.12);
+}
+
+.scroll-stack-end {
+  height: 40px;
+}

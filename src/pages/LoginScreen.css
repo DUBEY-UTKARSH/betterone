@@ -1,0 +1,167 @@
+.login-screen-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  padding: 40px 20px;
+  overflow: hidden;
+}
+
+.login-orb-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  padding: 36px;
+  border-radius: var(--radius-xl);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.login-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.login-title {
+  font-size: 26px;
+  color: var(--color-text-main);
+  margin-bottom: 6px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.demo-fill-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background-color: var(--color-success-light);
+  border: 1px dashed var(--color-success);
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
+
+.demo-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-success);
+}
+
+.demo-btn {
+  font-size: 12px;
+  padding: 4px 10px;
+}
+
+.login-tabs {
+  display: flex;
+  background-color: var(--color-surface-hover);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.submit-btn {
+  margin-top: 12px;
+  padding: 12px;
+  font-size: 15px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Floating Emergency SOS Circular Badge */
+.sos-circular-badge {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+}
+
+.sos-circular-text {
+  --circular-text-size: 150px;
+  color: var(--color-emergency);
+  margin: 0;
+}
+
+.sos-circular-badge:hover .circular-text {
+  color: var(--color-emergency-hover);
+}
+
+@media (max-width: 600px) {
+  .sos-circular-badge {
+    bottom: 16px;
+    right: 16px;
+    width: 120px;
+    height: 120px;
+  }
+  .sos-circular-text {
+    --circular-text-size: 120px;
+  }
+}

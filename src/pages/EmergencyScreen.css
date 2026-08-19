@@ -1,0 +1,291 @@
+/* EmergencyScreen.css */
+.emergency-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Emergency Hero */
+.emergency-hero {
+  border-left: 4px solid var(--color-emergency);
+  padding: 24px;
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+}
+
+:root[data-theme='dark'] .emergency-hero {
+  background: linear-gradient(135deg, #2A1215 0%, #131C2E 100%);
+}
+
+.emergency-hero-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.emergency-hero-icon {
+  width: 58px;
+  height: 58px;
+  background: var(--color-emergency-light);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-emergency);
+  flex-shrink: 0;
+}
+
+.emergency-title {
+  font-size: 1.6rem;
+  color: var(--color-emergency);
+  margin-bottom: 6px;
+}
+
+.emergency-subtitle {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+/* Dispatch Section */
+.dispatch-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.dispatch-panel {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  min-height: 340px;
+  justify-content: center;
+}
+
+.dispatch-icon-ring {
+  width: 72px;
+  height: 72px;
+  background: var(--color-emergency-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-emergency);
+}
+
+.dispatch-title {
+  font-size: 1.4rem;
+  color: var(--color-text-main);
+}
+
+.dispatch-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  max-width: 300px;
+  line-height: 1.6;
+}
+
+.btn-dispatch {
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: var(--radius-lg);
+  margin-top: 8px;
+}
+
+/* Countdown */
+.countdown-ring {
+  width: 80px;
+  height: 80px;
+  background: var(--color-emergency-light);
+  border-radius: 50%;
+  border: 3px solid var(--color-emergency);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--color-emergency);
+}
+
+.countdown-number {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-emergency);
+}
+
+.cancel-btn {
+  border-color: var(--color-emergency);
+  color: var(--color-emergency);
+}
+.cancel-btn:hover {
+  background: var(--color-emergency-light);
+}
+
+/* GPS Display */
+.gps-display {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  font-size: 12px;
+  color: var(--color-primary);
+}
+
+.gps-error {
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+/* Dispatched state */
+.dispatched-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.dispatched-title {
+  font-size: 1.5rem;
+  color: var(--color-success);
+}
+
+/* Hotlines */
+.hotlines-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.hotlines-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.hotlines-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hotline-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--color-text-main);
+  transition: all 0.2s ease;
+}
+
+.hotline-card:hover {
+  background: var(--color-emergency-light);
+  border-color: var(--color-emergency);
+}
+
+.hotline-emoji { font-size: 18px; flex-shrink: 0; }
+
+.hotline-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.hotline-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hotline-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-emergency);
+}
+
+/* First Aid Guides */
+.first-aid-section { display: flex; flex-direction: column; gap: 16px; }
+
+.guides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guide-item {
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.guide-item.expanded {
+  border-color: var(--color-emergency);
+  box-shadow: 0 0 0 3px rgba(225,29,72,0.08);
+}
+
+.guide-header-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-sans);
+  color: var(--color-text-main);
+  transition: background 0.15s;
+}
+
+.guide-header-btn:hover { background: var(--color-surface-hover); }
+
+.guide-icon-emoji { font-size: 20px; flex-shrink: 0; }
+
+.guide-title {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.guide-steps-body {
+  padding: 4px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.guide-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-emergency);
+  flex-shrink: 0;
+  width: 22px;
+  margin-top: 2px;
+}
+
+.step-text {
+  font-size: 14px;
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .dispatch-section {
+    grid-template-columns: 1fr;
+  }
+}

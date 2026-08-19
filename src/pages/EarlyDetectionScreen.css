@@ -1,0 +1,331 @@
+/* EarlyDetectionScreen.css */
+.early-detection-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Disease Grid */
+.ed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.disease-pixel-card {
+  min-height: 260px;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disease-pixel-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.disease-card-inner {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+}
+
+.disease-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disease-abbr {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.disease-card-name {
+  font-size: 1.1rem;
+  color: var(--color-text-main);
+  line-height: 1.3;
+}
+
+.disease-card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.disease-card-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: 8px;
+}
+
+/* Wizard */
+.wizard-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wizard-header {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wizard-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wizard-disease-title {
+  font-size: 1.3rem;
+}
+
+.wizard-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+.progress-bar {
+  height: 6px;
+  background: var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+/* Question Card */
+.question-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.question-number {
+  font-size: 11px;
+  color: var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--color-text-main);
+}
+
+.answer-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  font-family: var(--font-sans);
+  color: var(--color-text-main);
+  transition: all 0.2s ease;
+}
+
+.answer-option:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.answer-option.selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.option-indicator {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.risk-tag {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+}
+
+.risk-none { background: var(--color-blue-light); color: var(--color-blue); }
+.risk-low { background: var(--color-success-light); color: var(--color-success); }
+.risk-mod { background: var(--color-warning-light); color: var(--color-warning); }
+.risk-high { background: var(--color-emergency-light); color: var(--color-emergency); }
+
+.result-level-low { background: var(--color-success-light); }
+.result-level-moderate { background: var(--color-warning-light); }
+.result-level-high { background: var(--color-emergency-light); }
+
+.wizard-nav-btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Result Screen */
+.result-section {
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.result-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.result-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.result-disease-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.result-level-display {
+  padding: 28px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.result-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.result-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Risk Meter */
+.risk-meter-section {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.risk-meter-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.risk-meter-bar {
+  height: 10px;
+  background: var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.risk-meter-fill {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.8s ease;
+}
+
+.risk-meter-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.result-advice {
+  margin: 0 24px 20px;
+  padding: 20px;
+  background: var(--color-bg);
+}
+
+.result-advice h4 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+}
+
+.result-advice ul {
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-advice li {
+  font-size: 14px;
+  color: var(--color-text-main);
+  line-height: 1.5;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 600px) {
+  .ed-grid { grid-template-columns: 1fr; }
+  .result-actions { flex-direction: column; }
+  .wizard-nav-btns { flex-direction: column; }
+}

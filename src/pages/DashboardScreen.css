@@ -1,0 +1,278 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* KPI Strip */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.kpi-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+}
+
+.kpi-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-blue { background: var(--color-blue-light); color: var(--color-blue); }
+.kpi-teal { background: var(--color-primary-light); color: var(--color-primary); }
+.kpi-amber { background: var(--color-warning-light); color: var(--color-warning); }
+.kpi-rose { background: var(--color-emergency-light); color: var(--color-emergency); }
+
+.kpi-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text-main);
+}
+
+.kpi-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+}
+
+.dashboard-section {
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+.dashboard-col-left,
+.dashboard-col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Schedule List */
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 48px;
+  color: var(--color-primary);
+}
+
+.schedule-details {
+  flex: 1;
+}
+
+.schedule-patient {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.schedule-meta {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+/* Department Table */
+.dept-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.dept-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 0.8fr;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+  align-items: center;
+}
+
+.dept-row:last-child {
+  border-bottom: none;
+}
+
+.dept-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dept-name {
+  font-weight: 600;
+}
+
+/* Notification List */
+.notif-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.notif-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border);
+  align-items: flex-start;
+}
+
+.notif-item:last-child {
+  border-bottom: none;
+}
+
+.notif-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notif-alert .notif-icon { background: var(--color-emergency-light); color: var(--color-emergency); }
+.notif-reminder .notif-icon { background: var(--color-warning-light); color: var(--color-warning); }
+.notif-info .notif-icon { background: var(--color-blue-light); color: var(--color-blue); }
+
+.notif-msg {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.notif-time {
+  font-size: 11px;
+  color: var(--color-text-light);
+  margin-top: 4px;
+  display: block;
+}
+
+/* Vitals Mini Grid */
+.vitals-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.vitals-mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  background: var(--color-surface-hover);
+  border-radius: var(--radius-sm);
+}
+
+.vitals-mini-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vitals-mini-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.vitals-history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.vitals-history-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 12px;
+}
+
+.vitals-history-row:last-child {
+  border-bottom: none;
+}
+
+/* Quick Links */
+.quick-links-title {
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.quick-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-main);
+}
+
+.quick-link:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.quick-link span {
+  flex: 1;
+  text-align: left;
+}
+
+@media (max-width: 1024px) {
+  .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .kpi-strip { grid-template-columns: 1fr; }
+}

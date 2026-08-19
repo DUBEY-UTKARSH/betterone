@@ -1,122 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import { useRef } from 'react';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { motion, useInView } from 'motion/react';
+import { AuthProvider } from './context/AuthContext';
+import CircularText from './components/reactbits/CircularText';
+import Navbar from './components/Navbar';
+import HomeScreen from './pages/HomeScreen';
+import LoginScreen from './pages/LoginScreen';
+import ServicesChatbotScreen from './pages/ServicesChatbotScreen';
+import EarlyDetectionScreen from './pages/EarlyDetectionScreen';
+import EmergencyScreen from './pages/EmergencyScreen';
+import MyHealthScreen from './pages/MyHealthScreen';
+import ImproveScreen from './pages/ImproveScreen';
+import ProfileScreen from './pages/ProfileScreen';
+import DashboardScreen from './pages/DashboardScreen';
+import AppointmentsScreen from './pages/AppointmentsScreen';
+import DoctorScheduleScreen from './pages/DoctorScheduleScreen';
+import MedicalRecordsScreen from './pages/MedicalRecordsScreen';
+import FeedbackScreen from './pages/FeedbackScreen';
+import './index.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const Footer = () => {
+  const footerRef = useRef(null);
+  const { pathname } = useLocation();
+  const isLoginPage = pathname === '/login';
+  const inView = useInView(footerRef, { once: true, margin: '0px 0px -60px 0px' });
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
+    <footer ref={footerRef} className="app-footer">
+      {!isLoginPage && (
+        <motion.div
+          className="footer-circular-badge"
+          initial={{ opacity: 0, scale: 0.6, y: 30 }}
+          animate={inView ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.6, y: 30 }}
+          transition={{ type: 'spring', damping: 16, stiffness: 120 }}
         >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+          <CircularText
+            text="PULSECARE*AI*ALWAYS*ON*"
+            onHover="speedUp"
+            spinDuration={25}
+            className="footer-circular-text"
+          />
+        </motion.div>
+      )}
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <span className="footer-logo-text">PulseCare <span className="font-serif">AI</span></span>
+          <span className="footer-tagline">Clinical Intelligence · Always On</span>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <div className="footer-links">
+          <span>© 2026 PulseCare AI</span>
+          <span>·</span>
+          <span>Not a substitute for professional medical advice</span>
+          <span>·</span>
+          <a href="/emergency" className="footer-emergency-link">Emergency SOS 108</a>
         </div>
-      </section>
+      </div>
+    </footer>
+  );
+};
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+function App() {
+  return (
+    <AuthProvider>
+      <BrowserRouter>
+        <div className="app-container">
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<HomeScreen />} />
+              <Route path="/login" element={<LoginScreen />} />
+              <Route path="/dashboard" element={<DashboardScreen />} />
+              <Route path="/appointments" element={<AppointmentsScreen />} />
+              <Route path="/doctor-schedule" element={<DoctorScheduleScreen />} />
+              <Route path="/medical-records" element={<MedicalRecordsScreen />} />
+              <Route path="/feedback" element={<FeedbackScreen />} />
+              <Route path="/services" element={<ServicesChatbotScreen />} />
+              <Route path="/chatbot" element={<ServicesChatbotScreen />} />
+              <Route path="/early-detection" element={<EarlyDetectionScreen />} />
+              <Route path="/emergency" element={<EmergencyScreen />} />
+              <Route path="/my-health" element={<MyHealthScreen />} />
+              <Route path="/improve" element={<ImproveScreen />} />
+              <Route path="/profile" element={<ProfileScreen />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

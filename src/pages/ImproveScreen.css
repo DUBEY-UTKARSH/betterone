@@ -1,0 +1,277 @@
+/* ImproveScreen.css */
+.improve-container {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Trackers Grid */
+.trackers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.tracker-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tracker-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.tracker-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.tracker-icon-amber {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+.tracker-title {
+  font-size: 1.15rem;
+  margin-bottom: 2px;
+}
+
+.tracker-goal-sub {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Hydration Visual */
+.hydration-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.water-bottle-outer {
+  position: relative;
+  width: 80px;
+  height: 140px;
+  background: var(--color-blue-light);
+  border-radius: 12px 12px 18px 18px;
+  border: 2px solid var(--color-blue);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.water-level {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, #8BA6D4 0%, #6C8CBF 100%);
+  border-radius: 0 0 16px 16px;
+  transition: height 0.5s ease;
+  opacity: 0.8;
+}
+
+.water-cups-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  z-index: 1;
+}
+
+/* Cup Grid */
+.cup-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.cup-icon {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  opacity: 0.3;
+  transition: all 0.2s ease;
+}
+
+.cup-icon.filled {
+  opacity: 1;
+  background: var(--color-blue-light);
+  border-color: var(--color-blue);
+}
+
+.hydration-pct-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.pct-number {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.pct-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.tracker-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.tracker-btn {
+  justify-content: center;
+}
+
+/* Step Circular Progress */
+.steps-circular-wrap {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.steps-circle-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.steps-circle-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.steps-count {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1;
+}
+
+.steps-unit {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+/* Steps Quick Add */
+.steps-quick-add {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.steps-quick-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+/* Steps Manual Entry */
+.steps-manual-entry {
+  display: flex;
+  gap: 8px;
+}
+
+.steps-manual-entry .form-input {
+  flex: 1;
+  padding: 8px 12px;
+}
+
+.steps-progress-text {
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Precautionary Tips */
+.tips-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tip-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+}
+
+.tip-success {
+  background: var(--color-success-light);
+  border-color: #A3D9B2;
+}
+
+.tip-warning {
+  background: var(--color-warning-light);
+  border-color: #E2D36B;
+}
+
+.tip-info {
+  background: var(--color-primary-light);
+  border-color: #B0DDD0;
+}
+
+:root[data-theme='dark'] .tip-success { border-color: var(--color-success); }
+:root[data-theme='dark'] .tip-warning { border-color: var(--color-warning); }
+:root[data-theme='dark'] .tip-info { border-color: var(--color-primary); }
+
+.tip-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+
+.tip-text {
+  font-size: 14px;
+  color: var(--color-text-main);
+  line-height: 1.6;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .trackers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tracker-controls {
+    grid-template-columns: 1fr;
+  }
+}
